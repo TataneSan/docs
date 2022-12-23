@@ -1,0 +1,56 @@
+# Algorithme
+
+Si l'on multiplie chaque chiffre par 2 autant de fois qu'il y a de chiffres qui le suivent, on obtiendra la valeur de la puissance de 2 qui correspond à sa position. On peut donc tout simplement lire les chiffres dans l'ordre, les ajouter à un total, et multiplier ce total par 2 à chaque fois que l'on passe au chiffre suivant. 
+On obtient alors la somme des chiffres multipliés par la puissance de 2 correspondant à leur position, donc la valeur de l'entier en base 2.
+
+# Le programme
+
+## En python :
+
+```py
+nombreBinaire = input()
+nombreDécimal = 0
+for chiffre in nombreBinaire:
+   nombreDécimal = (nombreDécimal * 2) + int(chiffre)
+print(nombreDécimal)
+```
+
+## En Java : 
+
+```java
+import algorea.Scanner;
+class Main
+{
+   public static void main(String[] args)
+   {
+      Scanner input = new Scanner(System.in);
+      String chiffres = input.next();
+      int nombre = 0;
+      for (int iChiffre = 0; iChiffre < chiffres.length(); iChiffre++)
+         nombre = nombre * 2 + chiffres.charAt(iChiffre) - '0';
+      System.out.println(nombre);
+   }
+}
+```
+
+## En C :
+
+```C
+#include <stdio.h>
+int main()
+{
+   char caractereLu = '0';
+   int total = 0;
+   while (caractereLu != '\n')
+   {
+      scanf("%c", &caractereLu);
+      if (caractereLu == '1')
+         total = total * 2 + 1;
+      else if (caractereLu == '0')
+         total *= 2;
+   }
+   printf("%d\n", total);
+   return 0;  
+}
+```
+
