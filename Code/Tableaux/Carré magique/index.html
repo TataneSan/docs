@@ -524,38 +524,38 @@
 <h1 id="carre-magique">Carré magique</h1>
 <h2 id="algorithme-1">Algorithme 1</h2>
 <p>On commence par stocker le carré magique dans un tableau puis on calcule les sommes sur chaque ligne/colonne/diagonales et on vérifie qu'elles sont toutes égales. On doit également vérifier que tous les nombres sont dans le bon intervalle de valeur et qu'ils sont tous présents.</p>
-<p>tailleGrille &lt;- LireEntier()
-nombresCarre &lt;- Tableau 2D de taille tailleGrille * tailleGrille
-                initialisé avec des entiers lus
-Fonction tousNombresPresents()
-   maxVal &lt;- tailleGrille * tailleGrille + 1
-   presents &lt;- Tableau de taille maxVal initialisé à Faux
-   Pour chaque ligne dans nombresCarre faire
-      Pour chaque nombre dans ligne faire
-         Si (nombre &lt;= 0) ou (nombre &gt;= maxVal) ou presents[nombre]
-            alors Retourne Faux
-            sinon presents[nombre] &lt;- Vrai
-   Retourne Vrai</p>
+<p>tailleGrille &lt;- LireEntier()<br />
+nombresCarre &lt;- Tableau 2D de taille tailleGrille * tailleGrille<br />
+                initialisé avec des entiers lus<br />
+Fonction tousNombresPresents()<br />
+   maxVal &lt;- tailleGrille * tailleGrille + 1<br />
+   presents &lt;- Tableau de taille maxVal initialisé à Faux<br />
+   Pour chaque ligne dans nombresCarre faire<br />
+      Pour chaque nombre dans ligne faire<br />
+         Si (nombre &lt;= 0) ou (nombre &gt;= maxVal) ou presents[nombre]<br />
+            alors Retourne Faux<br />
+            sinon presents[nombre] &lt;- Vrai<br />
+   Retourne Vrai  </p>
 <p>Fonction totauxCorrects()</p>
-<p>Fonction totalPourDirection(linDepart, colDepart, deltaLin, deltaCol)
-      lin &lt;- linDepart
-      col &lt;- colDepart
-      total &lt;- 0
-      Répéter tailleGrille fois
-         total &lt;- total + nombresCarre[lin][col]
-         lin &lt;- lin + deltaLin
-         col &lt;- col + deltaCol
-      Retourne total
-   total &lt;- totalPourDirection(0, 0, 1, 1)
-   Si (totalPourDirection(0, tailleGrille - 1, 1, -1) != total)
-      alors Retourne Faux
-   Pour position &lt;- 0 à (tailleGrille - 1) faire
-      Si totalPourDirection(position, 0, 0, 1) != total
-         alors Retourne Faux
-      Si totalPourDirection(0, position, 1, 0) != total
-         alors Retourne Faux
-   Retourne Vrai
-Si tousNombresPresents() et totauxCorrects()
+<p>Fonction totalPourDirection(linDepart, colDepart, deltaLin, deltaCol)<br />
+      lin &lt;- linDepart<br />
+      col &lt;- colDepart<br />
+      total &lt;- 0<br />
+      Répéter tailleGrille fois<br />
+         total &lt;- total + nombresCarre[lin][col]<br />
+         lin &lt;- lin + deltaLin<br />
+         col &lt;- col + deltaCol<br />
+      Retourne total<br />
+   total &lt;- totalPourDirection(0, 0, 1, 1)<br />
+   Si (totalPourDirection(0, tailleGrille - 1, 1, -1) != total)<br />
+      alors Retourne Faux<br />
+   Pour position &lt;- 0 à (tailleGrille - 1) faire<br />
+      Si totalPourDirection(position, 0, 0, 1) != total<br />
+         alors Retourne Faux<br />
+      Si totalPourDirection(0, position, 1, 0) != total<br />
+         alors Retourne Faux<br />
+   Retourne Vrai<br />
+Si tousNombresPresents() et totauxCorrects()<br />
    alors AfficherÀLaLigne("yes")
    sinon AfficherÀLaLigne("no")</p>
 <h2 id="en-python">En python :</h2>
